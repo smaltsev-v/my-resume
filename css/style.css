@@ -116,6 +116,7 @@ body {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .my-projects-link:hover,
 .my-projects-link:focus {
