@@ -226,17 +226,18 @@ body {
 }
 
 .contacts-sections-link {
-  color: var(--text-sections-link);
+  /* color: var(--text-sections-link); */
+ text-decoration: none;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
-  color: var(--text-projects-link);
+  color:  var(--primary-bg-color);
   transition: color 250ms var(--timingFn);
 }
 .contacts-sections-link:hover,
 .contacts-sections-link:focus {
-  color: var(--primary-bg-color);
+  color: var(--accent-color);
 }
 
 .contacts__social {
