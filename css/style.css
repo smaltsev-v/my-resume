@@ -3,7 +3,7 @@
   --title-text-color: #000;
   --secondary-text-color: #a8a8a8;
   --text-sections-link: #49525f;
-  --text-projects-link: #595959;
+  --text-projects-link: #000;
   --accent-color: #fb6d3a;
   --primary-bg-color: #ffffff;
   --portfolio-secondary-color: #f5f4fa;
@@ -11,6 +11,9 @@
   --bg-color-secondary: #f5f7fa;
   --bg-color-sidebar: #1e2939;
   --timingFn: cubic-bezier(0.4, 0, 0.2, 1);
+  --marker:#fff;
+  --star:#ffef9f;
+  --active-star:#ffd300;
 }
 
 body {
@@ -101,17 +104,17 @@ body {
   overflow: hidden;
   white-space: nowrap;
   font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 16px;
   line-height: 24px;
   text-decoration: none;
   color: var(--text-projects-link);
   transition: color 250ms var(--timingFn);
 }
-.my-projects-link:after {
+/* .my-projects-link:after {
   margin-left: 5px;
   content: "..............................................................................................................................";
-}
+} */
 .flex {
   display: flex;
   align-items: center;
@@ -137,9 +140,21 @@ body {
   line-height: 24px;
   color: var(--title-text-color);
 }
+.projects__section--icon{
+  text-decoration: none;
+}
+.projects__section--icon:hover{ 
+  fill: var(--accent-color);
+}
 /*my work experience*/
 .my-work-experience-company {
+  color: var(--title-text-color);
+  text-decoration: none;
+}
+.my-work-experience-company:hover,
+.my-work-experience-company:focus{
   color: var(--accent-color);
+  transition: color 250ms var(--timingFn);
 }
 .my-work-experience-position {
   font-style: normal;
@@ -178,8 +193,15 @@ body {
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
-  color: var(--accent-color);
+  text-decoration: none;
+  color: var(--title-text-color);
 }
+.my-education-universitiy:focus,
+.my-education-universitiy:hover{
+  color: var(--accent-color);
+  transition: color 250ms var(--timingFn);
+}
+
 .my-education-period {
   font-style: normal;
   font-weight: normal;
@@ -287,7 +309,7 @@ body {
 }
 
 .Soft-Skills-item {
-  color: var(--accent-color);
+  color: var(--marker);
 }
 
 .Soft-Skills-item-text {
@@ -296,4 +318,106 @@ body {
   font-size: 14px;
   line-height: 24px;
   color: var(--sidebar-text-color);
+}
+/* Reting  Rus*/
+.reiting{
+  position: relative;
+  font-size: 25px;
+  display: inline-block;
+}
+.reiting::before{
+  content:"★★★★★";
+  display: block;
+}
+.reiting__items{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+.reiting__items-item{
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+}
+.reiting__items-label{
+  flex: 0 0 20%;
+  height: 100%;
+  cursor: pointer;
+  color: #fff;
+} 
+.reiting__items-label::before{
+  content:"★";
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+.reiting__items-item:checked,
+.reiting__items-item:checked ~ .reiting__items-label {
+  color: var(--active-star);
+}
+
+
+.reiting__items-label:hover,
+.reiting__items-label:hover ~ .reiting__items-label,
+.reiting__items-label:checked ~ .reiting__items-label:hover{
+  color: var(--star);
+}
+/* Reting  UA*/
+.reiting{
+  position: relative;
+  font-size: 25px;
+  display: inline-block;
+}
+.reiting::before{
+  content:"★★★★★";
+  display: block;
+}
+.reiting__items{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+.reiting__items-item{
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+}
+.reiting__items-label{
+  flex: 0 0 20%;
+  height: 100%;
+  cursor: pointer;
+  color: #fff;
+} 
+.reiting__items-label::before{
+  content:"★";
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+.reiting__items-item:checked,
+.reiting__items-item:checked ~ .reiting__items-label {
+  color: var(--active-star);
+}
+
+
+.reiting__items-label:hover,
+.reiting__items-label:hover ~ .reiting__items-label,
+.reiting__items-label:checked ~ .reiting__items-label:hover{
+  color: var(--star);
 }
